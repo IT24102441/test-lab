@@ -139,6 +139,7 @@ void *client_handler(void *arg) {
                     else if (strcmp(cmd, "DISKFREE") == 0) sys_cmd = "df -h / | tail -1 | awk '{print $4}'";
                     else if (strcmp(cmd, "HOSTNAME") == 0) sys_cmd = "hostname";
                     else if (strcmp(cmd, "WHOAMI") == 0) sys_cmd = "whoami";
+                    else if (strcmp(cmd, "KERNAL") == 0) sys_cmd = "uname -r";
                     
                     if (sys_cmd != NULL) {
                         FILE *fp = popen(sys_cmd, "r");
